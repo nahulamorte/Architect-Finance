@@ -3,13 +3,14 @@
     top: var(--header-height);
     left: 0;
     width: var(--sidebar-width);
-    height: 100vh;
+    height: calc(100vh - var(--header-height));
     background-color: var(--bg-sidebar);
     border-right: 1px solid var(--border-color);
     padding: var(--spacing-lg) var(--spacing-md);
     display: flex;
     flex-direction: column;
     font-family: var(--font-family-base);
+    box-sizing: border-box;
 }
 
 .subtitle-sidebar {

@@ -1,0 +1,22 @@
+.balance-section{
+    background-color: var(--bg-card);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.balance-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.balance-actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-sm);
+}

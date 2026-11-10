@@ -65,3 +65,10 @@ body {
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
 }
+
+.main-content {
+  margin-top: var(--header-height);
+  margin-left: var(--sidebar-width);
+  min-height: calc(100vh - var(--header-height));
+  padding: var(--spacing-lg);
+}

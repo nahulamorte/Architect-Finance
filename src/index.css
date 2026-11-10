@@ -21,9 +21,11 @@
      ========================================================================== */
   --brand-primary: #0052FF;        /* Color principal de la marca / acento (Electric Blue) */
   --brand-primary-hover: #003EC7;  /* Variación del color principal en hover / estado activo */
+  --brand-secondary: #00148F;      /* Para textos resaltantes en fondos de color */
   --color-success: #10B981;        /* Ingresos, saldos positivos, estado "Liquidado" */
   --color-danger: #EF4444;         /* Egresos, débitos, alertas o errores */
   --color-warning: #F59E0B;        /* Estados pendientes o advertencias */
+  --color-greeting: #DDE1FF;       /* Para la tarjeta de greeting en la seccion de balance */
 
   /* ==========================================================================
      Bordes, Divisores y Radios
@@ -40,9 +42,29 @@
   --header-height: 72px;           /* Altura de la barra superior */
 
   /* ==========================================================================
-     Tipografía y Espaciado
+     Tipografía y Escala de Tamaños (Font Sizes)
      ========================================================================== */
-  --font-family-base: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Familia principal */
+  --font-family-base: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Tamaños semánticos */
+  --font-size-balance: 2.5rem;      /* 40px: Monto numérico del saldo principal */
+  --font-size-h1: 1.875rem;         /* 30px: Título principal / Saludo ("Hola, Julián") */
+  --font-size-h2: 1.25rem;          /* 20px: Títulos de secciones o tarjetas */
+  --font-size-h3: 1.1rem;           /* 17.6px: Subtítulos destacados o nombres de módulos */
+  --font-size-body: 0.95rem;        /* 15.2px: Texto estándar, navegación y botones */
+  --font-size-sm: 0.85rem;          /* 13.6px: Textos secundarios, descripciones */
+  --font-size-xs: 0.75rem;          /* 12px: Badges ("CUENTA VERIFICADA"), etiquetas en mayúsculas */
+
+  /* Pesos de fuente (Font Weights) */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* ==========================================================================
+     Espaciado
+     ========================================================================== */
   --spacing-xs: 4px;               /* Espaciado extra pequeño (p-1 / gap-1) */
   --spacing-sm: 8px;               /* Espaciado pequeño (p-2 / gap-2) */
   --spacing-md: 16px;              /* Espaciado regular (p-4 / gap-4) */

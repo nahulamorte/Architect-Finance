@@ -23,6 +23,7 @@
   --brand-primary-hover: #003EC7;  /* Variación del color principal en hover / estado activo */
   --brand-secondary: #00148F;      /* Para textos resaltantes en fondos de color */
   --color-success: #10B981;        /* Ingresos, saldos positivos, estado "Liquidado" */
+  --color-performance-light: #f1f1ff;
   --color-danger: #EF4444;         /* Egresos, débitos, alertas o errores */
   --color-warning: #F59E0B;        /* Estados pendientes o advertencias */
   --color-greeting: #DDE1FF;       /* Para la tarjeta de greeting en la seccion de balance */
@@ -45,6 +46,7 @@
      Tipografía y Escala de Tamaños (Font Sizes)
      ========================================================================== */
   --font-family-base: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Tamaños semánticos */
   --font-size-balance: 2.5rem;      /* 40px: Monto numérico del saldo principal */
@@ -92,5 +94,4 @@ body {
   margin-top: var(--header-height);
   margin-left: var(--sidebar-width);
   min-height: calc(100vh - var(--header-height));
-  padding: var(--spacing-lg);
 }

@@ -1,22 +1,124 @@
-.balance-section{
+.balance-section {
     background-color: var(--bg-card);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: var(--spacing-lg);
+    width: 100%;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-sizing: border-box;
 }
 
+.status-account {
+    background-color: var(--color-greeting);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family-base);
+    padding: 2px var(--spacing-sm);
+    color: var(--brand-secondary);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--spacing-xs);
+}
+
+.greeting {
+    color: var(--text-primary);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-h1);
+    font-weight: var(--font-weight-extrabold);
+    line-height: 1.2;
+}
+
+/* Piso 3: Etiqueta "BALANCE TOTAL DISPONIBLE" y el ojito */
+.balance-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+}
+
+.balance-header {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.toggle-bg-btn {
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.toggle-bg-btn:hover {
+    color: var(--brand-primary);
+}
+
+/* Piso 4: Fila horizontal que enfrenta el Saldo a la izquierda y los Botones a la derecha */
 .balance-content {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    gap: var(--spacing-md);
+}
+
+.balance-value-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.balance-value {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-balance);
+    font-weight: var(--font-weight-extrabold);
+    color: var(--text-primary);
+    line-height: 1;
+}
+
+/* Pastilla de Rendimiento (+2.4% este mes) compacta en dos pisos */
+.investiment-performance {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--color-greeting);
+    color: var(--brand-secondary);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family-ui);
+}
+
+.performance-icon {
+    color: var(--brand-secondary);
+}
+
+.performance-text {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    line-height: 1.1;
 }
 
 .balance-actions {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     gap: var(--spacing-sm);
 }

@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
     padding: var(--spacing-md);
     margin: var(--spacing-lg);
     background-color: var(--bg-card);
@@ -13,8 +12,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: var(--spacing-lg);
+    width: 100%;
 }
 
 .header-titles{
@@ -22,24 +22,28 @@
     flex-direction: column;
 }
 
-.header-title {
+.header-title,
+.header-subtitle{
     color: var(--text-primary);
-    font-size: var(--font-size-h2);
-    font-weight: var(--font-weight-bold);
     font-family: var(--font-family-base);
+
 }
 
-.header-subtitle {
-    color: var(--text-primary);
+.header-title {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+}
+
+.header-subtitle{
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-regular);
-    font-family: var(--font-family-base);
 }
 
 .account-counter {
     border-radius: var(--radius-sm);
     background-color: var(--color-greeting);
     padding: var(--spacing-sm);
+    margin-right: var(--spacing-lg);
 }
 
 .account-cards-container {
@@ -55,7 +59,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
     gap: var(--spacing-lg);
     font-family: var(--font-family-base);
 }
@@ -64,13 +67,17 @@
     display: flex;
     flex-direction: row;
     gap: var(--spacing-sm);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-body);
 }
 
 .anchor-legal-footer {
     color: var(--brand-primary);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-body);
     font-weight: var(--font-weight-regular);
+}
+
+ShieldCheck {
+    color: var(--brand-primary);
 }
 
 .anchor-legal-footer:hover {

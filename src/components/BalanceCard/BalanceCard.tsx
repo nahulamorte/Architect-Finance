@@ -20,7 +20,7 @@ export default function BalanceCard(){
             {/* Piso 4: Fila horizontal que contiene el Saldo a la izquierda y los Botones a la derecha */}
             <div className="balance-content">
                 <div className="balance-value-container">
-                    <span className="balance-value">$ 48,250.00</span>
+                    <span className="balance-value">$ 48.250,00</span>
                     <span className="investiment-performance">
                         <ChartNoAxesCombined size={16} className="performance-icon" />
                         <div className="performance-text">

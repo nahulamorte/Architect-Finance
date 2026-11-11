@@ -32,8 +32,9 @@ export default function AccountCard({
                 <div className="account-card-identifier">
                     <span className="identifier-label">{identifierLabel}: </span>
                     <span className="identifier">{identifier}</span>
-                    <Copy size={15}/>
-                    <p>Copiar</p>
+                    <button className="btn-copy-icon">
+                        <Copy size={15} />
+                    </button>
                 </div>
             </div>
             <div className="card-balance">

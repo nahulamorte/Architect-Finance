@@ -60,6 +60,8 @@
     color: var(--text-primary);
 }
 
+
+
 .account-card-identifier{
     display: flex;
     flex-direction: row;
@@ -67,8 +69,25 @@
     gap: var(--spacing-sm);
 }
 
+.identifier-label,
+.identifier,
+.account-card-identifier p{
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-sm);
+}
+
 .card-balance p{
     font-size: var(--font-size-xs);
+}
+
+.btn-copy-icon {
+    border: none;
+    outline: none;
+}
+
+.btn-copy-icon:hover{
+    cursor: pointer;
+    color: var(--brand-primary-hover);
 }
 
 .card-balance h1{
@@ -77,8 +96,6 @@
     font-weight: var(--font-weight-extrabold);
     font-family: var(--font-family-base);
 }
-
-
 
 .note-brand { color: var(--brand-primary); }
 

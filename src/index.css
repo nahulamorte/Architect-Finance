@@ -27,6 +27,8 @@
   --color-danger: #EF4444;         /* Egresos, débitos, alertas o errores */
   --color-warning: #F59E0B;        /* Estados pendientes o advertencias */
   --color-greeting: #DDE1FF;       /* Para la tarjeta de greeting en la seccion de balance */
+  --color-saving-account: #003EC7; /*Color para las cuentas de tipo ahorro*/
+  --color-performance-account: #930FFF; /*Color para las cuentas de tipo rendimiento*/
 
   /* ==========================================================================
      Bordes, Divisores y Radios

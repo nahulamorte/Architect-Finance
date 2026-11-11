@@ -1,0 +1,79 @@
+.account-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg);
+    background-color: var(--bg-card);
+    max-width: 90vh;
+}
+
+.header-account-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--spacing-lg);
+}
+
+.header-titles{
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+    color: var(--text-primary);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-base);
+}
+
+.header-subtitle {
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    font-family: var(--font-family-base);
+}
+
+.account-counter {
+    border-radius: var(--radius-sm);
+    background-color: var(--color-greeting);
+    padding: var(--spacing-sm);
+}
+
+.account-cards-container {
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.footer-account-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-lg);
+    font-family: var(--font-family-base);
+}
+
+.legal {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+.anchor-legal-footer {
+    color: var(--brand-primary);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-regular);
+}
+
+.anchor-legal-footer:hover {
+    color: var(--brand-primary-hover);
+    cursor: pointer;
+}

@@ -1,0 +1,70 @@
+.activity-section {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-md);
+    margin: var(--spacing-lg);
+    background-color: var(--bg-card);
+    max-width: 90vh;
+    border-radius: var(--radius-md);
+}
+
+
+
+.header-activity-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-sm);
+    gap: var(--spacing-lg);
+}
+
+.header-title {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-base);
+}
+
+.activity-types-list {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md);
+    background-color: var(--bg-sidebar);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+}
+
+.activity-type {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    font-family: var(--font-family-ui);
+}
+
+.activity-type:hover {
+    background-color: var(--bg-card);
+    color: var(--brand-primary-hover);
+    cursor: pointer;
+}
+
+
+/*TODO:
+    Componente de actividad.
+    Una vez hecho, se estiliza la seccion
+*/
+
+.footer-activity-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.historial {
+    font-size: var(--font-size-body);
+    color: var(--brand-primary-hover);
+}
+
+.historial:hover {
+    cursor: pointer;
+}

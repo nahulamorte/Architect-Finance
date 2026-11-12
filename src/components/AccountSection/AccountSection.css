@@ -6,6 +6,7 @@
     margin: var(--spacing-lg);
     background-color: var(--bg-card);
     max-width: 90vh;
+    border-radius: var(--radius-md);
 }
 
 .header-account-section{

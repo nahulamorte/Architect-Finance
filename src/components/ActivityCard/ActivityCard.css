@@ -1,0 +1,81 @@
+.activity-card {
+    background-color: var(--bg-sidebar);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+}
+
+.icon-container{
+    background-color: var(--color-performance-light);
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+}
+
+.activity-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.dot-completed {
+    background-color: var(--color-success);
+}
+
+.dot-rejected {
+    background-color: var(--color-danger);
+}
+
+.activity-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.activity-title {
+    font-family: var(--font-family-base );
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+}
+
+.activity-date,
+.status{
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.activity-value {
+    display: flex;
+    align-items: center;
+
+}
+
+.value {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-h3);
+    font-weight: var(--font-weight-extrabold);
+}
+
+.currency {
+    margin: var(--spacing-sm);
+     border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-family: var(--font-family-ui);
+    color: var(--text-primary);
+}
+
+
+

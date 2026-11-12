@@ -53,6 +53,12 @@
     Componente de actividad.
     Una vez hecho, se estiliza la seccion
 */
+.activitys{
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg);
+}
 
 .footer-activity-section{
     display: flex;
@@ -60,11 +66,12 @@
     justify-content: center;
 }
 
-.historial {
+.footer-activity-section {
     font-size: var(--font-size-body);
     color: var(--brand-primary-hover);
+
 }
 
-.historial:hover {
+.footer-activity-section:hover {
     cursor: pointer;
 }

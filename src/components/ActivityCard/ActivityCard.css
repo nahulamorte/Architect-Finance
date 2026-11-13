@@ -3,21 +3,78 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    padding: var(--spacing-xs) var(--spacing-md);
-    border-radius: var(--radius-sm);
+    justify-content: space-between;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+    box-sizing: border-box;
+    width: 100%;
 }
 
-.icon-container{
+.activity-card:hover {
+    background-color: var(--bg-item-hover);
+    border-color: var(--border-color);
+}
+
+/* ==========================================================================
+   Lado Izquierdo (Icono + Textos)
+   ========================================================================== */
+.activity-card-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.icon-container {
     background-color: var(--color-performance-light);
+    color: var(--brand-primary);
+    display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
+    height: 42px;
+    width: 42px;
+    flex-shrink: 0;
 }
 
-.activity-info{
+.activity-icon {
+    color: var(--brand-primary);
+}
+
+.activity-info {
     display: flex;
     flex-direction: column;
+    gap: 4px;
+}
+
+.activity-title {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.activity-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+}
+
+.activity-date {
+    color: var(--text-muted);
+}
+
+.activity-separator {
+    color: var(--text-muted);
+    font-size: 0.7rem;
 }
 
 .status-dot {
@@ -36,46 +93,59 @@
     background-color: var(--color-danger);
 }
 
-.activity-description {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--spacing-sm);
-}
-
-.activity-title {
-    font-family: var(--font-family-base );
-    font-size: var(--font-size-body);
-    font-weight: var(--font-weight-bold);
-}
-
-.activity-date,
-.status{
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-sm);
+.status {
+    text-transform: capitalize;
     font-weight: var(--font-weight-medium);
 }
 
-.activity-value {
+/* ==========================================================================
+   Lado Derecho (Monto + Descarga)
+   ========================================================================== */
+.activity-card-right {
     display: flex;
+    flex-direction: row;
     align-items: center;
+    gap: var(--spacing-md);
+}
 
+.activity-value-block {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 4px;
+    text-align: right;
 }
 
 .value {
     font-family: var(--font-family-base);
     font-size: var(--font-size-h3);
     font-weight: var(--font-weight-extrabold);
+    color: var(--text-primary);
+    margin: 0;
 }
 
 .currency {
-    margin: var(--spacing-sm);
-     border-radius: var(--radius-sm);
     font-size: var(--font-size-xs);
     font-family: var(--font-family-ui);
-    color: var(--text-primary);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-muted);
 }
 
+.btn-download {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--text-muted);
+    padding: 8px;
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
 
-
+.btn-download:hover {
+    color: var(--brand-primary);
+    background-color: var(--bg-card);
+}

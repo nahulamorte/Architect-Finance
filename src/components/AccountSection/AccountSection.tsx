@@ -36,7 +36,7 @@ export default function AccountSection(){
             </div>
             <div className="footer-account-section">
                 <div className="legal">
-                    <ShieldCheck size={20} color="#0052FFFF"/>
+                    <ShieldCheck size={18} className="shield-icon" />
                     <p className="footer-text">Fondos protegidos por garantia bancaria europea</p>
                 </div>
                 <a className="anchor-legal-footer">Ver detalles fiscales</a>

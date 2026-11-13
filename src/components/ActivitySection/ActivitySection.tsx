@@ -10,7 +10,7 @@ export default function ActivitySection() {
                     <h2 className="header-title">Actividad bancaria reciente</h2>
                 </div>
                     <ul className="activity-types-list">
-                        <li className="activity-type">Todos</li>
+                        <li className="activity-type active">Todos</li>
                         <li className="activity-type">Transferencia</li>
                         <li className="activity-type">Depósitos</li>
                         <li className="activity-type">Tarjeta</li>

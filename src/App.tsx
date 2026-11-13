@@ -12,8 +12,15 @@ export default function App() {
             <Sidebar/>
             <main className="main-content">
                 <BalanceCard/>
-                <AccountSection/>
-                <ActivitySection/>
+                <div className="dashboard-grid">
+                    <div className="dashboard-left-col">
+                        <AccountSection/>
+                        <ActivitySection/>
+                    </div>
+                    <div className="dashboard-right-col">
+
+                    </div>
+                </div>
             </main>
         </>
     );

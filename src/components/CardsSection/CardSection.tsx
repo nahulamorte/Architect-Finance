@@ -1,5 +1,6 @@
 import './CardSection.css';
 import { CirclePlus, ShieldLock, RectangleEllipsis, SlidersHorizontal, Shield } from 'lucide-react';
+import Card from '../Card/Card.tsx';
 
 export default function CardSection() {
     return (
@@ -17,7 +18,15 @@ export default function CardSection() {
 
             {/* Tarjeta 1: Física / Metal Infinite */}
             <div className="card-container">
-                {/* Aquí se montará el componente Card físico */}
+                <Card
+                    variant="metal"
+                    badgeText="PLATINUM"
+                    cardType="ELITE METAL CORE"
+                    cardNumber="•••• •••• •••• 9284"
+                    ownerName="JULIAN DEL MORAL"
+                    expiry="09/28"
+                    network="visa"
+                />
             </div>
 
             <div className="monthly-limit-container">
@@ -46,7 +55,16 @@ export default function CardSection() {
 
             {/* Tarjeta 2: Virtual Online */}
             <div className="card-container">
-                {/* Aquí se montará el componente Card virtual */}
+                <Card
+                    variant="virtual"
+                    badgeText="VIRTUAL ACTIVA"
+                    cardType="ECO-INSTANT CARD"
+                    cardNumber="•••• •••• •••• 4108"
+                    labelBottomLeft="USO EXCLUSIVO"
+                    ownerName="E-COMMERCE & SUBS"
+                    expiry="11/26"
+                    network="mastercard"
+                />
             </div>
 
             <div className="virtual-limit-container">

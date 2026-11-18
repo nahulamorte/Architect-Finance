@@ -31,11 +31,20 @@
   --color-performance-account: #930FFF; /*Color para las cuentas de tipo rendimiento*/
 
   /* ==========================================================================
+     Fondos y Gradientes de Tarjetas Plásticas (Card Design Tokens)
+     ========================================================================== */
+  --card-bg-navy: linear-gradient(135deg, #061B3D 0%, #0C2E64 50%, #133E82 100%);       /* 01. Débito Física (Azul Oscuro) */
+  --card-bg-bicolor: linear-gradient(110deg, #FFFFFF 32%, #60A5FA 70%, #0052FF 100%);    /* 02. Crédito Básica (Bicolor Blanco / Azul) */
+  --card-bg-gold: linear-gradient(135deg, #F5D37E 0%, #DDA43B 50%, #B8801A 100%);        /* 03. Crédito Gold (Oro Metálico) */
+  --card-bg-platinum: linear-gradient(135deg, #2D3238 0%, #1C2023 50%, #111315 100%);    /* 04. Crédito Platinum (Black / Obsidian) */
+  --card-bg-virtual: linear-gradient(135deg, #0052FF 0%, #0045D8 60%, #0030A8 100%);     /* 05. Débito Virtual (Azul Eléctrico Dinámico) */
+
+  /* ==========================================================================
      Bordes, Divisores y Radios
      ========================================================================== */
   --border-color: #E5E7EB;         /* Líneas divisorias, bordes de tarjetas y menú */
   --radius-sm: 8px;                /* Radio pequeño (botones pequeños, tags, badges) */
-  --radius-md: 12px;               /* Radio medio (ítems de lista, inputs, sub-tarjetas) */
+  --radius-md: 16px;               /* Radio medio (ítems de lista, inputs, sub-tarjetas) */
   --radius-lg: 20px;               /* Radio grande (tarjetas principales, modales, widgets) */
 
   /* ==========================================================================

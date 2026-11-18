@@ -3,6 +3,7 @@ import TopHeader from './layout/TopHeader/TopHeader.tsx';
 import BalanceCard from './components/BalanceCard/BalanceCard.tsx'
 import AccountSection from "./components/AccountSection/AccountSection.tsx";
 import ActivitySection from "./components/ActivitySection/ActivitySection.tsx";
+import CardSection from "./components/CardsSection/CardSection.tsx";
 
 
 export default function App() {
@@ -18,7 +19,7 @@ export default function App() {
                         <ActivitySection/>
                     </div>
                     <div className="dashboard-right-col">
-
+                        <CardSection/>
                     </div>
                 </div>
             </main>

@@ -96,6 +96,7 @@ body {
   margin-top: var(--header-height);
   margin-left: var(--sidebar-width);
   min-height: calc(100vh - var(--header-height));
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
@@ -103,17 +104,16 @@ body {
 
 .dashboard-grid {
   display: grid;
-  grid-template-columns: 1.7fr 1fr;
+  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
   gap: var(--spacing-lg);
-  align-items: center;
+  align-items: start;
+  width: 100%;
 }
 
 .dashboard-left-col,
-.dashboard-left-col {
+.dashboard-right-col {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
   width: 100%;
 }
-
-.dashboard-right-col {}

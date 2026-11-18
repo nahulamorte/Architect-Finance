@@ -1,0 +1,244 @@
+/* ==========================================================================
+   Contenedor Principal de la Sección de Tarjetas
+   ========================================================================== */
+.card-section {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    padding: var(--spacing-lg);
+    width: 100%;
+    font-family: var(--font-family-base);
+}
+
+/* ==========================================================================
+   Header de la Sección
+   ========================================================================== */
+.header-card-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    width: 100%;
+}
+
+.title-card-section {
+    color: var(--text-primary);
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-bold);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.subtitle-card-section {
+    color: var(--text-muted);
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-regular);
+    margin: 2px 0 0 0;
+}
+
+.btn-query-new-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none;
+    color: var(--brand-primary);
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    cursor: pointer;
+    transition: color 0.15s ease;
+    white-space: nowrap;
+}
+
+.btn-query-new-card:hover {
+    color: var(--brand-primary-hover);
+}
+
+/* ==========================================================================
+   Contenedor para la Tarjeta Plástica
+   ========================================================================== */
+.card-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   Caja de Límite Mensual (Tarjeta Física)
+   ========================================================================== */
+.monthly-limit-container {
+    background-color: var(--bg-sidebar);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    transition: border-color 0.15s ease;
+}
+
+.monthly-limit-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.limit-text {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.limit-balance {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Barra de progreso de límite */
+.monthly-limit-bar {
+    width: 100%;
+    height: 6px;
+    background-color: #E2E8F0;
+    border-radius: 999px;
+    overflow: hidden;
+    margin: 2px 0;
+}
+
+.monthly-limit-fill {
+    height: 100%;
+    width: 83%;
+    background-color: var(--brand-primary);
+    border-radius: 999px;
+}
+
+/* Botonera de acciones (Congelar, PIN, Límites) */
+.btn-limit-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 2px;
+    gap: 4px;
+}
+
+.btn-limit-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 6px 8px;
+    color: var(--text-secondary);
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+}
+
+.btn-limit-action svg {
+    color: var(--brand-primary);
+    flex-shrink: 0;
+}
+
+.btn-limit-action:hover {
+    color: var(--brand-primary);
+    background-color: var(--bg-item-hover);
+}
+
+/* ==========================================================================
+   Caja de Límite Virtual (Tarjeta Online)
+   ========================================================================== */
+.virtual-limit-container {
+    background-color: var(--bg-sidebar);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    transition: border-color 0.15s ease;
+}
+
+.virtual-limit-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.virtual-limit-text {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.virtual-limit-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.security-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--brand-primary);
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+}
+
+.security-info svg {
+    color: var(--brand-primary);
+    flex-shrink: 0;
+}
+
+.security-text {
+    color: var(--brand-primary);
+}
+
+.card-data-anchor {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--brand-primary);
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none;
+    transition: color 0.15s ease;
+    white-space: nowrap;
+}
+
+.card-data-anchor:hover {
+    color: var(--brand-primary-hover);
+    text-decoration: underline;
+}

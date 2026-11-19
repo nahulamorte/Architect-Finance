@@ -1,26 +1,35 @@
 //imports
 import './BalanceCard.css';
-import { Eye, SendHorizonal, ChartNoAxesCombined, Receipt, CreditCardPlus, UserRoundPen } from 'lucide-react';
+import {
+    Eye,
+    SendHorizonal,
+    ChartNoAxesCombined,
+    Receipt,
+    CreditCardPlus,
+    UserRoundPen,
+    EyeClosed
+} from 'lucide-react';
 import ActionButton from '../ActionButton/ActionButton';
+import { useState} from "react";
 
 export default function BalanceCard(){
+    const [isVisible, setIsVisible] = useState<boolean>(true);
+
     return(
         <section className="balance-section">
             <span className="status-account">Cuenta verificada</span>
             <div className="greeting">Hola, Julian</div>
 
-            {/* Piso 3: Etiqueta y botón del ojo */}
             <div className="balance-info">
                 <span className="balance-header">Balance Total Disponible</span>
-                <button className="toggle-bg-btn" aria-label="Ocultar saldo">
-                    <Eye size={20} />
+                <button className="toggle-bg-btn" aria-label="Ocultar saldo" onClick={() => setIsVisible(!isVisible)}>
+                    {isVisible ? <Eye size={20} /> : <EyeClosed size="20" />}
                 </button>
             </div>
 
-            {/* Piso 4: Fila horizontal que contiene el Saldo a la izquierda y los Botones a la derecha */}
             <div className="balance-content">
                 <div className="balance-value-container">
-                    <span className="balance-value">$ 48.250,00</span>
+                    <span className="balance-value">{isVisible ? "$ 48.250,00" : "*******"}</span>
                     <span className="investiment-performance">
                         <ChartNoAxesCombined size={16} className="performance-icon" />
                         <div className="performance-text">

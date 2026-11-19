@@ -40,6 +40,24 @@
   --card-bg-virtual: linear-gradient(135deg, #0052FF 0%, #0045D8 60%, #0030A8 100%);     /* 05. Débito Virtual (Azul Eléctrico Dinámico) */
 
   /* ==========================================================================
+     Badges y Etiquetas de Categoría (Card Pill Badges)
+     ========================================================================== */
+  /* Platinum / Obsidian */
+  --badge-bg-platinum: rgba(255, 255, 255, 0.12);
+  --badge-border-platinum: rgba(255, 255, 255, 0.22);
+  --badge-text-platinum: #FFFFFF;
+
+  /* Gold */
+  --badge-bg-gold: rgba(255, 255, 255, 0.25);
+  --badge-border-gold: rgba(146, 64, 14, 0.25);
+  --badge-text-gold: #78350F;
+
+  /* Virtual Activa */
+  --badge-bg-virtual: rgba(16, 185, 129, 0.18);
+  --badge-border-virtual: rgba(16, 185, 129, 0.4);
+  --badge-text-virtual: #34D399;
+
+  /* ==========================================================================
      Bordes, Divisores y Radios
      ========================================================================== */
   --border-color: #E5E7EB;         /* Líneas divisorias, bordes de tarjetas y menú */
@@ -58,6 +76,7 @@
      ========================================================================== */
   --font-family-base: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-mono: 'Space Mono', 'Courier New', Courier, monospace; /* Grabado de tarjetas, números, titular y códigos */
 
   /* Tamaños semánticos */
   --font-size-balance: 2.5rem;      /* 40px: Monto numérico del saldo principal */

@@ -4,7 +4,7 @@ import { Nfc } from 'lucide-react';
 interface CardProps {
     variant: 'metal' | 'virtual';
     badgeText?: string;
-    cardType: string;
+    cardType?: string;
     cardNumber: string;
     labelBottomLeft?: string;
     labelBottomRight?: string;
@@ -19,7 +19,7 @@ export default function Card({
     cardType,
     cardNumber,
     labelBottomLeft = 'TITULAR',
-    labelBottomRight = 'EXPIRA',
+    labelBottomRight = 'EXP',
     ownerName,
     expiry,
     network
@@ -27,11 +27,12 @@ export default function Card({
     return (
         <div className={`credit-card ${variant}`}>
             <div className="card-header">
-                <div className="card-brand-group">
-                    <span className="card-brand-name">Architect Finance</span>
+                <span className="card-brand-name">Architect <strong>Finance</strong></span>
+
+                <div className="card-brand-icon">
                     {badgeText && <span className="card-badge">{badgeText}</span>}
+                    <Nfc size={18} className="card-nfc-icon" />
                 </div>
-                <Nfc size={18} className="card-nfc-icon" />
             </div>
 
             <div className="card-type-row">

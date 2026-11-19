@@ -1,0 +1,211 @@
+.credit-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1.586 / 1;
+    box-sizing: border-box;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    color: #FFFFFF;
+    font-family: var(--font-family-base);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+}
+
+.credit-card.metal {
+    background: var(--card-bg-platinum);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.credit-card.virtual {
+    background: var(--card-bg-virtual);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   Header: Logo del Banco y Accesorios (NFC + Badge)
+   ========================================================================== */
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: var(--spacing-md);
+}
+
+.card-brand-name {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-body);
+    font-weight: var(--font-weight-bold); /* 700 */
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+.card-brand-name strong {
+    font-weight: var(--font-weight-extrabold); /* 800 */
+}
+
+.card-brand-icon {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: var(--spacing-sm);
+}
+
+.card-nfc-icon {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.card-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.credit-card.metal .card-badge {
+    background-color: var(--badge-bg-platinum);
+    border: 1px solid var(--badge-border-platinum);
+    color: var(--badge-text-platinum);
+}
+
+.credit-card.virtual .card-badge {
+    background-color: var(--badge-bg-virtual);
+    border: 1px solid var(--badge-border-virtual);
+    color: var(--badge-text-virtual);
+}
+
+/* ==========================================================================
+   Subtipo Técnico (ELITE METAL CORE / ECO-INSTANT CARD)
+   ========================================================================== */
+.card-type-row {
+    display: flex;
+    align-items: center;
+}
+
+.card-type {
+    font-family: var(--font-family-mono);
+    font-size: 11px;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+}
+
+/* ==========================================================================
+   Número de Tarjeta Grabado
+   ========================================================================== */
+.card-number-row {
+    display: flex;
+    align-items: center;
+}
+
+.card-number {
+    font-family: var(--font-family-mono);
+    font-size: 1.15rem;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.12em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Zona Inferior: Titular, Expiración y Red
+   ========================================================================== */
+.card-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.owner-info,
+.expiry-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.info-label {
+    font-family: var(--font-family-ui);
+    font-size: 9px;
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    margin-bottom: 2px;
+}
+
+.owner-name {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.expiry-date {
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Red de Pago (VISA / Mastercard)
+   ========================================================================== */
+.network-container {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.network-visa {
+    font-family: var(--font-family-base);
+    font-size: 1.25rem;
+    font-weight: var(--font-weight-extrabold);
+    font-style: italic;
+    letter-spacing: 0.05em;
+    color: #FFFFFF;
+    line-height: 1;
+}
+
+.network-mastercard {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 32px;
+    height: 20px;
+}
+
+.mc-circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.mc-red {
+    background-color: #EB001B;
+    left: 0;
+}
+
+.mc-orange {
+    background-color: #F79E1B;
+    left: 12px;
+    opacity: 0.92;
+}
+
+

@@ -1,6 +1,88 @@
 import './ActivitySection.css';
 import ActivityCard from "../ActivityCard/ActivityCard.tsx";
-import { ArrowUpRight, ArrowDownRight, BanknoteArrowDown, Receipt   } from 'lucide-react'
+import { ArrowUpRight, ArrowDownRight, BanknoteArrowDown, Receipt, ShoppingBag, CreditCard } from 'lucide-react';
+import type { Transaction } from "../../types/Transaction.ts";
+
+const TRANSACTIONS: Transaction[] = [
+    {
+        id: 'tx-1',
+        type: 'pago',
+        iconActivity: Receipt,
+        label: 'Pago de Servicio Luz & Gas Metrogas',
+        hour: '21:19',
+        date: '12 nov',
+        value: '60.000',
+        currency: 'ARS',
+        status: 'completado'
+    },
+    {
+        id: 'tx-2',
+        type: 'transferencia',
+        iconActivity: ArrowDownRight,
+        label: 'Transferencia a Lara Heyd',
+        hour: '11:11',
+        date: '11 nov',
+        value: '11.111',
+        currency: 'ARS',
+        status: 'completado'
+    },
+    {
+        id: 'tx-3',
+        type: 'deposito',
+        iconActivity: BanknoteArrowDown,
+        label: 'Depósito nómina salarial',
+        hour: '09:15',
+        date: '11 nov',
+        value: '3.600',
+        currency: 'USD',
+        status: 'completado'
+    },
+    {
+        id: 'tx-4',
+        type: 'transferencia',
+        iconActivity: ArrowUpRight,
+        label: 'Transferencia recibida de Beto',
+        hour: '17:33',
+        date: '10 nov',
+        value: '15.000',
+        currency: 'ARS',
+        status: 'completado'
+    },
+    {
+        id: 'tx-5',
+        type: 'tarjeta',
+        iconActivity: ShoppingBag,
+        label: 'Compra Apple Store Paseo de Gracia',
+        hour: '16:45',
+        date: '09 nov',
+        value: '199,00',
+        currency: 'USD',
+        status: 'completado'
+    },
+    {
+        id: 'tx-6',
+        type: 'pago',
+        iconActivity: CreditCard,
+        label: 'Suscripción Spotify Premium',
+        hour: '04:12',
+        date: '08 nov',
+        value: '2.499',
+        currency: 'ARS',
+        status: 'completado'
+    },
+    {
+        id: 'tx-7',
+        type: 'tarjeta',
+        iconActivity: ShoppingBag,
+        label: 'Compra Supermercado Coto',
+        hour: '13:20',
+        date: '06 nov',
+        value: '45.820',
+        currency: 'ARS',
+        status: 'rechazado'
+    }
+];
+
 
 export default function ActivitySection() {
     return (
@@ -9,46 +91,26 @@ export default function ActivitySection() {
                 <div className="header-info">
                     <h2 className="header-title">Actividad bancaria reciente</h2>
                 </div>
-                    <ul className="activity-types-list">
-                        <li className="activity-type active">Todos</li>
-                        <li className="activity-type">Transferencia</li>
-                        <li className="activity-type">Depósitos</li>
-                        <li className="activity-type">Tarjeta</li>
-                    </ul>
+                <ul className="activity-types-list">
+                    <li className="activity-type active">Todos</li>
+                    <li className="activity-type">Transferencia</li>
+                    <li className="activity-type">Depósitos</li>
+                    <li className="activity-type">Tarjeta</li>
+                </ul>
             </div>
             <div className="activitys">
-                <ActivityCard
-                    iconActivity={Receipt}
-                    label={"Pago de Servicio"}
-                    hour={"21:19"}
-                    date={"12 nov"}
-                    value={"60.000"}
-                    currency={"ARS"}
-                />
-                <ActivityCard
-                    iconActivity={ArrowDownRight}
-                    label={"Transferencia a Lara Heyd"}
-                    hour={"11:11"}
-                    date={"11 nov"}
-                    value={"11111"}
-                    currency={"ARS"}
-                />
-                <ActivityCard
-                    iconActivity={BanknoteArrowDown}
-                    label={"Retiro de efectivo"}
-                    hour={"07:11"}
-                    date={"11 nov"}
-                    value={"11111"}
-                    currency={"ARS"}
-                />
-                <ActivityCard
-                    iconActivity={ArrowUpRight}
-                    label={"Transferencia de Beto"}
-                    hour={"17:33"}
-                    date={"10 nov"}
-                    value={"15.000"}
-                    currency={"ARS"}
-                />
+                {TRANSACTIONS.map((tx) => (
+                    <ActivityCard
+                        key={tx.id}
+                        iconActivity={tx.iconActivity}
+                        label={tx.label}
+                        hour={tx.hour}
+                        date={tx.date}
+                        value={tx.value}
+                        currency={tx.currency}
+                        status={tx.status}
+                    />
+                ))}
             </div>
             <div className="footer-activity-section">
                 <a className="historial">Ver historial completo de transacciones (142)</a>

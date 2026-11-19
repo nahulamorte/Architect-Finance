@@ -4,6 +4,7 @@ import BalanceCard from './components/BalanceCard/BalanceCard.tsx'
 import AccountSection from "./components/AccountSection/AccountSection.tsx";
 import ActivitySection from "./components/ActivitySection/ActivitySection.tsx";
 import CardSection from "./components/CardsSection/CardSection.tsx";
+import MonthlyFlow from "./components/MonthlyFlow/MonthlyFlow.tsx";
 
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
                     </div>
                     <div className="dashboard-right-col">
                         <CardSection/>
+                        <MonthlyFlow/>
                     </div>
                 </div>
             </main>

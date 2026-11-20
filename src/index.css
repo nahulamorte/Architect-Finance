@@ -1,37 +1,37 @@
 :root {
   /* ==========================================================================
-     Colores de Fondo (Backgrounds)
+     1. Colores de Fondo (Backgrounds - Modo Claro por defecto)
      ========================================================================== */
   --bg-app: #F8F9FA;               /* Fondo general de toda la aplicación */
   --bg-sidebar: #F3F4F5;           /* Fondo de la barra lateral */
-  --bg-header: #FFFFFF;            /* Fondo de la barra superior (o #F8F9FA integrado) */
+  --bg-header: #FFFFFF;            /* Fondo de la barra superior */
   --bg-card: #FFFFFF;              /* Fondo para tarjetas, módulos o paneles */
   --bg-item-hover: #ECEEF0;        /* Fondo al pasar el mouse por un elemento */
   --bg-item-active: #E2E8F0;       /* Fondo del ítem seleccionado actualmente */
 
   /* ==========================================================================
-     Colores de Texto (Typography)
+     2. Colores de Texto (Typography)
      ========================================================================== */
   --text-primary: #111827;         /* Títulos principales y texto de alto contraste */
   --text-secondary: #4B5563;       /* Subtítulos y descripciones */
   --text-muted: #9CA3AF;           /* Textos atenuados, fechas o notas secundarias */
 
   /* ==========================================================================
-     Colores de Marca y Estados Financieros (Homebanking)
+     3. Colores de Marca y Estados Financieros (Homebanking)
      ========================================================================== */
   --brand-primary: #0052FF;        /* Color principal de la marca / acento (Electric Blue) */
   --brand-primary-hover: #003EC7;  /* Variación del color principal en hover / estado activo */
   --brand-secondary: #00148F;      /* Para textos resaltantes en fondos de color */
   --color-success: #10B981;        /* Ingresos, saldos positivos, estado "Liquidado" */
-  --color-performance-light: #f1f1ff;
+  --color-performance-light: #F1F1FF;
   --color-danger: #EF4444;         /* Egresos, débitos, alertas o errores */
   --color-warning: #F59E0B;        /* Estados pendientes o advertencias */
-  --color-greeting: #DDE1FF;       /* Para la tarjeta de greeting en la seccion de balance */
-  --color-saving-account: #003EC7; /*Color para las cuentas de tipo ahorro*/
-  --color-performance-account: #930FFF; /*Color para las cuentas de tipo rendimiento*/
+  --color-greeting: #DDE1FF;       /* Para el badge de cuenta verificada */
+  --color-saving-account: #003EC7; /* Color para las cuentas de tipo ahorro */
+  --color-performance-account: #930FFF; /* Color para las cuentas de tipo rendimiento */
 
   /* ==========================================================================
-     Fondos y Gradientes de Tarjetas Plásticas (Card Design Tokens)
+     4. Fondos y Gradientes de Tarjetas Plásticas (Card Design Tokens)
      ========================================================================== */
   --card-bg-navy: linear-gradient(135deg, #061B3D 0%, #0C2E64 50%, #133E82 100%);       /* 01. Débito Física (Azul Oscuro) */
   --card-bg-bicolor: linear-gradient(110deg, #FFFFFF 32%, #60A5FA 70%, #0052FF 100%);    /* 02. Crédito Básica (Bicolor Blanco / Azul) */
@@ -40,7 +40,7 @@
   --card-bg-virtual: linear-gradient(135deg, #0052FF 0%, #0045D8 60%, #0030A8 100%);     /* 05. Débito Virtual (Azul Eléctrico Dinámico) */
 
   /* ==========================================================================
-     Badges y Etiquetas de Categoría (Card Pill Badges)
+     5. Badges y Etiquetas de Categoría (Card Pill Badges)
      ========================================================================== */
   /* Platinum / Obsidian */
   --badge-bg-platinum: rgba(255, 255, 255, 0.12);
@@ -58,7 +58,7 @@
   --badge-text-virtual: #34D399;
 
   /* ==========================================================================
-     Bordes, Divisores y Radios
+     6. Bordes, Divisores y Radios
      ========================================================================== */
   --border-color: #E5E7EB;         /* Líneas divisorias, bordes de tarjetas y menú */
   --radius-sm: 8px;                /* Radio pequeño (botones pequeños, tags, badges) */
@@ -66,13 +66,13 @@
   --radius-lg: 20px;               /* Radio grande (tarjetas principales, modales, widgets) */
 
   /* ==========================================================================
-     Dimensiones del Layout
+     7. Dimensiones del Layout
      ========================================================================== */
   --sidebar-width: 256px;          /* Ancho fijo de la barra lateral (16rem / w-64) */
   --header-height: 72px;           /* Altura de la barra superior */
 
   /* ==========================================================================
-     Tipografía y Escala de Tamaños (Font Sizes)
+     8. Tipografía y Escala de Tamaños (Font Sizes)
      ========================================================================== */
   --font-family-base: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-family-ui: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -95,7 +95,7 @@
   --font-weight-extrabold: 800;
 
   /* ==========================================================================
-     Espaciado
+     9. Espaciado
      ========================================================================== */
   --spacing-xs: 4px;               /* Espaciado extra pequeño (p-1 / gap-1) */
   --spacing-sm: 8px;               /* Espaciado pequeño (p-2 / gap-2) */
@@ -104,7 +104,38 @@
 }
 
 /* ==========================================================================
-   Reseteo Universal: Previene que los paddings rompan anchos del 100%
+   Tema Oscuro Profesional (Dark Mode - Fintech Obsidian Slate)
+   Se activa al asignar data-theme="dark" al elemento <html> o <body>
+   ========================================================================== */
+[data-theme="dark"] {
+  /* 1. Fondos con Elevación Tonal */
+  --bg-app: #0B0E14;              /* Nivel 0: Fondo profundo de la aplicación */
+  --bg-sidebar: #11151E;          /* Nivel 1: Barra lateral */
+  --bg-header: #11151E;           /* Nivel 1: Barra superior */
+  --bg-card: #161B26;             /* Nivel 2: Módulos, tarjetas y widgets */
+  --bg-item-hover: #1E2535;       /* Nivel 3: Hover en botones e ítems */
+  --bg-item-active: #273147;      /* Nivel 3: Selección activa */
+
+  /* 2. Textos adaptados para Alto Contraste */
+  --text-primary: #F8FAFC;         /* Blanco nítido para títulos y saldos */
+  --text-secondary: #94A3B8;       /* Gris azulado para subtítulos y descripciones */
+  --text-muted: #64748B;           /* Textos atenuados, fechas y micro-etiquetas */
+
+  /* 3. Bordes y Divisores */
+  --border-color: #232B3E;         /* Bordes sutiles que definen cajas con elegancia */
+
+  /* 4. Acentos de Marca y Estados (Ajustados para no encandilar en oscuro) */
+  --brand-primary: #3B82F6;        /* Azul vibrante con contraste óptimo en fondos oscuros */
+  --brand-primary-hover: #60A5FA;  /* Variación más luminosa para hover */
+  --brand-secondary: #93C5FD;      /* Textos destacados sobre fondos oscuros */
+  --color-performance-light: rgba(59, 130, 246, 0.15); /* Píldora de rendimiento sutil */
+  --color-greeting: rgba(59, 130, 246, 0.2);          /* Badge de cuenta verificada */
+  --color-saving-account: #60A5FA; /* Ahorro en modo oscuro */
+  --color-performance-account: #C084FC; /* Rendimiento en modo oscuro */
+}
+
+/* ==========================================================================
+   Reseteo Universal y Configuración Base
    ========================================================================== */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -118,8 +149,12 @@ body {
   color: var(--text-primary);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+/* ==========================================================================
+   Estructura del Layout Principal
+   ========================================================================== */
 .main-content {
   margin-top: var(--header-height);
   margin-left: var(--sidebar-width);

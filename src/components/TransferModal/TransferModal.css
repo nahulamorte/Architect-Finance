@@ -176,3 +176,15 @@
 .btn-confirm:hover {
     background-color: var(--brand-primary-hover);
 }
+
+.form-error {
+    background-color: rgba(239, 68, 68, 0.12); /* Fondo rojizo suave */
+    border: 1px solid var(--color-danger);       /* Borde rojo */
+    color: var(--color-danger);                  /* Texto rojo */
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    width: 100%;
+    box-sizing: border-box;
+}

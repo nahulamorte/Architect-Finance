@@ -12,7 +12,10 @@ import {
 import ActionButton from '../ActionButton/ActionButton';
 import { useState} from "react";
 
-export default function BalanceCard(){
+interface BalanceCardProps {
+    onTransferClick?: () => void;
+}
+export default function BalanceCard({onTransferClick}: BalanceCardProps) {
     const [isVisible, setIsVisible] = useState<boolean>(true);
 
     return(
@@ -40,7 +43,7 @@ export default function BalanceCard(){
                 </div>
 
                 <div className="balance-actions">
-                    <ActionButton icon={SendHorizonal} label="Transferir" variant="primary" />
+                    <ActionButton icon={SendHorizonal} label="Transferir" variant="primary" onClick={onTransferClick} />
                     <ActionButton icon={Receipt} label="Pagar servicios" />
                     <ActionButton icon={CreditCardPlus} label="Ingresar dinero" />
                     <ActionButton icon={UserRoundPen} label="CVU / Alias" />

@@ -13,8 +13,8 @@ export default function TransferModal({ isOpen, onClose }: TransferModalProps) {
     }
 
     return (
-        <div className="modal-overlay">
-            <div className="modal-container">
+        <div className="modal-overlay" onClick={onClose}>
+            <div className="modal-container" onClick={(e) => e.stopPropagation()}>
                 <div className="modal-header">
                     <h3>Transferir dinero</h3>
                     <button type="button" className="btn-close" onClick={onClose} aria-label="Cerrar modal">

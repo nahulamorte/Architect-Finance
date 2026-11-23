@@ -5,15 +5,19 @@ import AccountSection from "./components/AccountSection/AccountSection.tsx";
 import ActivitySection from "./components/ActivitySection/ActivitySection.tsx";
 import CardSection from "./components/CardsSection/CardSection.tsx";
 import MonthlyFlow from "./components/MonthlyFlow/MonthlyFlow.tsx";
+import TransferModal from "./components/TransferModal/TransferModal.tsx";
+import {useState} from "react";
 
 
 export default function App() {
+    const [isTransferOpen, setIsTransferOpen] = useState<boolean>(false);
+
     return (
         <>
             <TopHeader/>
             <Sidebar/>
             <main className="main-content">
-                <BalanceCard/>
+                <BalanceCard onTransferClick={() => setIsTransferOpen(true)}/>
                 <div className="dashboard-grid">
                     <div className="dashboard-left-col">
                         <AccountSection/>
@@ -24,6 +28,10 @@ export default function App() {
                         <MonthlyFlow/>
                     </div>
                 </div>
+                <TransferModal
+                    isOpen={isTransferOpen}
+                    onClose={() => setIsTransferOpen(false)}
+                />
             </main>
         </>
     );

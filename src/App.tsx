@@ -11,13 +11,23 @@ import {useState} from "react";
 
 export default function App() {
     const [isTransferOpen, setIsTransferOpen] = useState<boolean>(false);
+    const [balance, setBalance] = useState<number>(5000);
+
+    const handleTransferSucess = (transferAmount: number, recipient: string) => {
+        setBalance((prevBalance) => prevBalance - transferAmount);
+        console.log('Transferencia enviada a ' + recipient);
+    }
 
     return (
         <>
             <TopHeader/>
             <Sidebar/>
             <main className="main-content">
-                <BalanceCard onTransferClick={() => setIsTransferOpen(true)}/>
+                <BalanceCard
+                    username={"Antigravity"}
+                    amount={balance}
+                    onTransferClick={() => setIsTransferOpen(true)}
+                />
                 <div className="dashboard-grid">
                     <div className="dashboard-left-col">
                         <AccountSection/>
@@ -31,6 +41,8 @@ export default function App() {
                 <TransferModal
                     isOpen={isTransferOpen}
                     onClose={() => setIsTransferOpen(false)}
+                    currentBalance={balance}
+                    onTransferSuccess={handleTransferSucess}
                 />
             </main>
         </>

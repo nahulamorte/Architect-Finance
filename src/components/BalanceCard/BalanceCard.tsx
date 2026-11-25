@@ -1,4 +1,3 @@
-//imports
 import './BalanceCard.css';
 import {
     Eye,
@@ -11,17 +10,22 @@ import {
 } from 'lucide-react';
 import ActionButton from '../ActionButton/ActionButton';
 import { useState} from "react";
+import { formatCurrency } from "../../utils/formatters.ts";
 
 interface BalanceCardProps {
+    username?: string,
+    amount: number,
     onTransferClick?: () => void;
 }
-export default function BalanceCard({onTransferClick}: BalanceCardProps) {
+export default function BalanceCard({username, amount, onTransferClick}: BalanceCardProps) {
     const [isVisible, setIsVisible] = useState<boolean>(true);
+
+
 
     return(
         <section className="balance-section">
             <span className="status-account">Cuenta verificada</span>
-            <div className="greeting">Hola, Julian</div>
+            <div className="greeting">Hola{username ? ", " + username : ' '}!</div>
 
             <div className="balance-info">
                 <span className="balance-header">Balance Total Disponible</span>
@@ -32,7 +36,7 @@ export default function BalanceCard({onTransferClick}: BalanceCardProps) {
 
             <div className="balance-content">
                 <div className="balance-value-container">
-                    <span className="balance-value">{isVisible ? "$ 48.250,00" : "*******"}</span>
+                    <span className="balance-value">{isVisible ? formatCurrency(amount) : "*******"}</span>
                     <span className="investiment-performance">
                         <ChartNoAxesCombined size={16} className="performance-icon" />
                         <div className="performance-text">

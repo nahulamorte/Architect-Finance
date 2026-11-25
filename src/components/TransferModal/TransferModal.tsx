@@ -1,14 +1,17 @@
 import './TransferModal.css'
 import {X} from 'lucide-react'
 import {useState} from "react";
+import { formatCurrency } from "../../utils/formatters.ts";
 
 
 interface TransferModalProps {
     isOpen: boolean;
     onClose: () => void;
+    currentBalance: number;
+    onTransferSuccess: (amount: number, recipient: string) => void;
 }
 
-export default function TransferModal({isOpen, onClose}: TransferModalProps) {
+export default function TransferModal({isOpen, onClose, currentBalance, onTransferSuccess}: TransferModalProps) {
     const [recipient, setRecipient] = useState<string>('');
     const [amount, setAmount] = useState<string>('');
     const [error, setError] = useState<string>('');
@@ -26,6 +29,13 @@ export default function TransferModal({isOpen, onClose}: TransferModalProps) {
         if (isNaN(numericAmount) || numericAmount <= 0) {
             setError('Por favor ingresá un monto válido mayor a 0.');
             return;
+        }
+
+        if(currentBalance < numericAmount) {
+            setError('Dinero insuficiente para realizar la transferencia')
+            return;
+        } else {
+            onTransferSuccess(numericAmount, recipient);
         }
 
         setRecipient('');

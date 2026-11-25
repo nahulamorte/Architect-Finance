@@ -1,96 +1,23 @@
 import './ActivitySection.css';
 import ActivityCard from "../ActivityCard/ActivityCard.tsx";
-import { ArrowUpRight, ArrowDownRight, BanknoteArrowDown, Receipt, ShoppingBag, CreditCard } from 'lucide-react';
+// import { ArrowUpRight, ArrowDownRight, BanknoteArrowDown, Receipt, ShoppingBag, CreditCard } from 'lucide-react';
 import type { Transaction } from "../../types/Transaction.ts";
 import {useState} from "react";
 
-const TRANSACTIONS: Transaction[] = [
-    {
-        id: 'tx-1',
-        type: 'pago',
-        iconActivity: Receipt,
-        label: 'Pago de Servicio Luz & Gas Metrogas',
-        hour: '21:19',
-        date: '12 nov',
-        value: '60.000',
-        currency: 'ARS',
-        status: 'completado'
-    },
-    {
-        id: 'tx-2',
-        type: 'transferencia',
-        iconActivity: ArrowDownRight,
-        label: 'Transferencia a Lara Heyd',
-        hour: '11:11',
-        date: '11 nov',
-        value: '11.111',
-        currency: 'ARS',
-        status: 'completado'
-    },
-    {
-        id: 'tx-3',
-        type: 'deposito',
-        iconActivity: BanknoteArrowDown,
-        label: 'Depósito nómina salarial',
-        hour: '09:15',
-        date: '11 nov',
-        value: '3.600',
-        currency: 'USD',
-        status: 'completado'
-    },
-    {
-        id: 'tx-4',
-        type: 'transferencia',
-        iconActivity: ArrowUpRight,
-        label: 'Transferencia recibida de Beto',
-        hour: '17:33',
-        date: '10 nov',
-        value: '15.000',
-        currency: 'ARS',
-        status: 'completado'
-    },
-    {
-        id: 'tx-5',
-        type: 'tarjeta',
-        iconActivity: ShoppingBag,
-        label: 'Compra Apple Store Paseo de Gracia',
-        hour: '16:45',
-        date: '09 nov',
-        value: '199,00',
-        currency: 'USD',
-        status: 'completado'
-    },
-    {
-        id: 'tx-6',
-        type: 'pago',
-        iconActivity: CreditCard,
-        label: 'Suscripción Spotify Premium',
-        hour: '04:12',
-        date: '08 nov',
-        value: '2.499',
-        currency: 'ARS',
-        status: 'completado'
-    },
-    {
-        id: 'tx-7',
-        type: 'tarjeta',
-        iconActivity: ShoppingBag,
-        label: 'Compra Supermercado Coto',
-        hour: '13:20',
-        date: '06 nov',
-        value: '45.820',
-        currency: 'ARS',
-        status: 'rechazado'
-    }
-];
+
+export interface ActivitySectionProp{
+    transactions: Transaction[];
+}
 
 
-export default function ActivitySection() {
+export default function ActivitySection({
+    transactions,
+                                        }:ActivitySectionProp) {
     const [selectedCategory, setSelectedCategory] = useState<string>('todos');
 
     const filteredTransactions = selectedCategory === 'todos'
-        ? TRANSACTIONS
-        : TRANSACTIONS.filter((tx) => tx.type === selectedCategory);
+        ? transactions
+        : transactions.filter((tx) => tx.type === selectedCategory);
 
     return (
         <section className="activity-section">

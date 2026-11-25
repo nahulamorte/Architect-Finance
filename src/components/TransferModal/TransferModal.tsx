@@ -1,7 +1,6 @@
 import './TransferModal.css'
 import {X} from 'lucide-react'
 import {useState} from "react";
-import { formatCurrency } from "../../utils/formatters.ts";
 
 
 interface TransferModalProps {

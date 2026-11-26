@@ -1,4 +1,4 @@
-import { ArrowDownRight } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight } from "lucide-react";
 import Sidebar from './layout/Sidebar/Sidebar.tsx';
 import TopHeader from './layout/TopHeader/TopHeader.tsx';
 import BalanceCard from './components/BalanceCard/BalanceCard.tsx'
@@ -9,11 +9,13 @@ import MonthlyFlow from "./components/MonthlyFlow/MonthlyFlow.tsx";
 import TransferModal from "./components/TransferModal/TransferModal.tsx";
 import {useState} from "react";
 import type {Transaction} from "./types/Transaction.ts";
+import DepositModal from "./components/DepositModal/DepositModal.tsx";
 
 
 export default function App() {
     const [isTransferOpen, setIsTransferOpen] = useState<boolean>(false);
-    const [balance, setBalance] = useState<number>(5000);
+    const [isDepositOpen, setIsDepositOpen] = useState<boolean>(false);
+    const [balance, setBalance] = useState<number>(0);
     const [transactions, setTransactions] = useState<Transaction[]>([]);
 
     const handleTransferSucess = (transferAmount: number, recipient: string) => {
@@ -35,6 +37,24 @@ export default function App() {
         console.log('Transferencia enviada a ' + recipient);
     }
 
+    const handleDepositSucess = (amountToDeposit: number) => {
+        setBalance((prevAmount) => prevAmount + amountToDeposit);
+
+        const newTransaction: Transaction = {
+            id: 'tx- ' + Date.now(),
+            type: 'deposito',
+            iconActivity: ArrowUpRight,
+            label: `Deposito a cuenta`,
+            hour: new Date().toLocaleTimeString('es-AR', { hour: '2-digit', minute: '2-digit' }),
+            date: 'Hoy',
+            value: amountToDeposit.toLocaleString('es-AR', {minimumSignificantDigits: 2}),
+            status:  'completado',
+            currency: 'ARS'
+        }
+
+        setTransactions((prev) => [newTransaction, ...prev]);
+    }
+
     return (
         <>
             <TopHeader/>
@@ -44,6 +64,7 @@ export default function App() {
                     username={"Antigravity"}
                     amount={balance}
                     onTransferClick={() => setIsTransferOpen(true)}
+                    onDepositClick={() => setIsDepositOpen(true)}
                 />
                 <div className="dashboard-grid">
                     <div className="dashboard-left-col">
@@ -60,6 +81,11 @@ export default function App() {
                     onClose={() => setIsTransferOpen(false)}
                     currentBalance={balance}
                     onTransferSuccess={handleTransferSucess}
+                />
+                <DepositModal
+                    isOpen={isDepositOpen}
+                    onClose={() => setIsDepositOpen(false)}
+                    onDepositSuccess={handleDepositSucess}
                 />
             </main>
         </>

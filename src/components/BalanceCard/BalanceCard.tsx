@@ -16,8 +16,9 @@ interface BalanceCardProps {
     username?: string,
     amount: number,
     onTransferClick?: () => void;
+    onDepositClick?: () => void;
 }
-export default function BalanceCard({username, amount, onTransferClick}: BalanceCardProps) {
+export default function BalanceCard({username, amount, onTransferClick, onDepositClick}: BalanceCardProps) {
     const [isVisible, setIsVisible] = useState<boolean>(true);
 
 
@@ -49,7 +50,7 @@ export default function BalanceCard({username, amount, onTransferClick}: Balance
                 <div className="balance-actions">
                     <ActionButton icon={SendHorizonal} label="Transferir" variant="primary" onClick={onTransferClick} />
                     <ActionButton icon={Receipt} label="Pagar servicios" />
-                    <ActionButton icon={CreditCardPlus} label="Ingresar dinero" />
+                    <ActionButton icon={CreditCardPlus} label="Ingresar dinero" onClick={onDepositClick} />
                     <ActionButton icon={UserRoundPen} label="CVU / Alias" />
                 </div>
             </div>

@@ -7,7 +7,7 @@ import ActivitySection from "./components/ActivitySection/ActivitySection.tsx";
 import CardSection from "./components/CardsSection/CardSection.tsx";
 import MonthlyFlow from "./components/MonthlyFlow/MonthlyFlow.tsx";
 import TransferModal from "./components/TransferModal/TransferModal.tsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import type {Transaction} from "./types/Transaction.ts";
 import DepositModal from "./components/DepositModal/DepositModal.tsx";
 
@@ -15,8 +15,15 @@ import DepositModal from "./components/DepositModal/DepositModal.tsx";
 export default function App() {
     const [isTransferOpen, setIsTransferOpen] = useState<boolean>(false);
     const [isDepositOpen, setIsDepositOpen] = useState<boolean>(false);
-    const [balance, setBalance] = useState<number>(0);
+    const [balance, setBalance] = useState(() => {
+      const balanceSaved = localStorage.getItem('balance');
+      return balanceSaved !== null ? Number(balanceSaved) : 0;
+    });
     const [transactions, setTransactions] = useState<Transaction[]>([]);
+
+    useEffect(() => {
+       localStorage.setItem('balance', balance.toString());
+    });
 
     const handleTransferSucess = (transferAmount: number, recipient: string) => {
         setBalance((prevBalance) => prevBalance - transferAmount);

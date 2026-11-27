@@ -4,9 +4,16 @@ import { Search, Sun, User, Moon } from 'lucide-react'
 import {useEffect, useState} from "react";
 
 export default function TopHeader(){
-    const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+        const savedMode = localStorage.getItem('isDarkMode');
+        return savedMode !== null ? savedMode === 'true' : false;
+    });
+
+
 
     useEffect(() => {
+        localStorage.setItem('isDarkMode', isDarkMode.toString());
+
         if (isDarkMode) {
             document.documentElement.setAttribute('data-theme', 'dark');
         } else {

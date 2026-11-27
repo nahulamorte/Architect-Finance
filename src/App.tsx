@@ -15,15 +15,31 @@ import DepositModal from "./components/DepositModal/DepositModal.tsx";
 export default function App() {
     const [isTransferOpen, setIsTransferOpen] = useState<boolean>(false);
     const [isDepositOpen, setIsDepositOpen] = useState<boolean>(false);
-    const [balance, setBalance] = useState(() => {
+    const [balance, setBalance] = useState<number>(() => {
       const balanceSaved = localStorage.getItem('balance');
-      return balanceSaved !== null ? Number(balanceSaved) : 0;
+      const num = Number(balanceSaved);
+      return balanceSaved !== null && !isNaN(num) ? num : 0;
     });
-    const [transactions, setTransactions] = useState<Transaction[]>([]);
+    const [transactions, setTransactions] = useState<Transaction[]>(()=>{
+        const saved = localStorage.getItem('transactions');
+        if (saved !== null){
+            try {
+                const parsed = JSON.parse(saved);
+                return Array.isArray(parsed) ? parsed : [];
+            } catch (error) {
+                return [];
+            }
+        }
+        return [];
+    });
 
     useEffect(() => {
-       localStorage.setItem('balance', balance.toString());
-    });
+        localStorage.setItem('balance', balance.toString());
+    }, [balance]);
+
+    useEffect(() => {
+       localStorage.setItem('transactions', JSON.stringify(transactions));
+    }, [transactions]);
 
     const handleTransferSucess = (transferAmount: number, recipient: string) => {
         setBalance((prevBalance) => prevBalance - transferAmount);

@@ -1,23 +1,38 @@
 import './ActivitySection.css';
 import ActivityCard from "../ActivityCard/ActivityCard.tsx";
-// import { ArrowUpRight, ArrowDownRight, BanknoteArrowDown, Receipt, ShoppingBag, CreditCard } from 'lucide-react';
+import { ArrowDownRight, ArrowUpRight, Receipt, ShoppingBag } from 'lucide-react';
 import type { Transaction } from "../../types/Transaction.ts";
 import {useState} from "react";
-
 
 export interface ActivitySectionProp{
     transactions: Transaction[];
 }
 
+const getIconForType = (type: string) => {
+    switch (type) {
+        case 'transferencia':
+            return ArrowDownRight;
+        case 'deposito':
+            return ArrowUpRight;
+        case 'pago':
+            return Receipt;
+        case 'tarjeta':
+            return ShoppingBag;
+        default:
+            return ArrowDownRight;
+    }
+};
 
 export default function ActivitySection({
-    transactions,
-                                        }:ActivitySectionProp) {
+    transactions = [],
+}:ActivitySectionProp) {
     const [selectedCategory, setSelectedCategory] = useState<string>('todos');
 
+    const safeTransactions = Array.isArray(transactions) ? transactions : [];
+
     const filteredTransactions = selectedCategory === 'todos'
-        ? transactions
-        : transactions.filter((tx) => tx.type === selectedCategory);
+        ? safeTransactions
+        : safeTransactions.filter((tx) => tx.type === selectedCategory);
 
     return (
         <section className="activity-section">
@@ -36,7 +51,7 @@ export default function ActivitySection({
                 {filteredTransactions.map((tx) => (
                     <ActivityCard
                         key={tx.id}
-                        iconActivity={tx.iconActivity}
+                        iconActivity={typeof tx.iconActivity === 'function' ? tx.iconActivity : getIconForType(tx.type)}
                         label={tx.label}
                         hour={tx.hour}
                         date={tx.date}

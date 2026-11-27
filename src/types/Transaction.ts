@@ -3,7 +3,7 @@ import type {LucideIcon} from "lucide-react";
 export interface Transaction {
     id: string;
     type: 'transferencia' | 'pago' | 'deposito' | 'tarjeta';
-    iconActivity: LucideIcon;
+    iconActivity?: LucideIcon;
     label: string;
     hour: string;
     date: string;

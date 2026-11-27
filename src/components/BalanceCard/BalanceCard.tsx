@@ -9,7 +9,7 @@ import {
     EyeClosed
 } from 'lucide-react';
 import ActionButton from '../ActionButton/ActionButton';
-import { useState} from "react";
+import {useEffect, useState} from "react";
 import { formatCurrency } from "../../utils/formatters.ts";
 
 interface BalanceCardProps {
@@ -19,8 +19,14 @@ interface BalanceCardProps {
     onDepositClick?: () => void;
 }
 export default function BalanceCard({username, amount, onTransferClick, onDepositClick}: BalanceCardProps) {
-    const [isVisible, setIsVisible] = useState<boolean>(true);
+    const [isVisible, setIsVisible] = useState<boolean>(()=>{
+        const savedVisible = localStorage.getItem('isVisible');
+        return savedVisible !== null ? savedVisible === 'true' : true;
+    });
 
+    useEffect(() => {
+        localStorage.setItem('isVisible', isVisible.toString())
+    }, [isVisible]);
 
 
     return(
